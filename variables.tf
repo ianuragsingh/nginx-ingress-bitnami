@@ -6,7 +6,7 @@ variable "cluster_id" {
   default     = null
 }
 
-variable "cluster_namespace" {
+variable "namespace" {
   description = "EKS cluster namespace where the ingress nginx will be deployed"
   type        = string
   default     = "default"
