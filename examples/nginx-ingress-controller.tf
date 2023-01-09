@@ -1,6 +1,6 @@
 
 module "eks_cluster" {
-  source = "git::https://github.com/ianuragsingh/simple-eks-cluster.git?ref=v0.0.8"
+  source = "git::https://github.com/ianuragsingh/simple-eks-cluster.git?ref=v0.0.9"
   
   cluster_name = "simple-eks-cluster"
   subnet_ids   = ["x", "y"]  # replace with your subnet ids or pass vpc name to create vpc
@@ -12,7 +12,7 @@ module "eks_cluster" {
 }
 
 module "nginx-ingress-controller" {
-  source            = "git::https://github.com/ianuragsingh/nginx-ingress-controller.git?ref=v0.0.2"
+  source            = "git::https://github.com/ianuragsingh/nginx-ingress-controller.git?ref=v0.0.5"
   cluster_id        = module.eks_cluster.cluster_name
 
   depends_on = [
