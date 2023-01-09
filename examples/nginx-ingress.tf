@@ -14,7 +14,7 @@ resource "kubernetes_ingress_v1" "ingress" {
             service {
               name = "app1-service"
               port {
-                number = 8888
+                number = 8080
               }
             }
           }
@@ -27,7 +27,7 @@ resource "kubernetes_ingress_v1" "ingress" {
             service {
               name = "app2-service"
               port {
-                number = 8888
+                number = 8080
               }
             }
           }
