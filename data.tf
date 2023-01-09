@@ -1,11 +1,11 @@
 
 data "aws_region" "current" {}
 
-data "aws_eks_cluster" "cluster" {
+data "aws_eks_cluster" "this" {
   name = var.cluster_id
 }
 
-data "aws_eks_cluster_auth" "cluster_auth" {
+data "aws_eks_cluster_auth" "this" {
   name = var.cluster_id
 }
 
