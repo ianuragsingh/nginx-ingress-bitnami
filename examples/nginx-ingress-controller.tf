@@ -12,8 +12,7 @@ module "eks_cluster" {
 }
 
 module "nginx-ingress-controller" {
-  source     = "git::https://github.com/ianuragsingh/nginx-ingress-controller.git?ref=v0.0.2"
-  
+  source            = "git::https://github.com/ianuragsingh/nginx-ingress-controller.git?ref=v0.0.2"
   cluster_id        = module.eks_cluster.cluster_name
 
   depends_on = [
