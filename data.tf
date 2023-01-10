@@ -9,7 +9,7 @@ data "aws_eks_cluster_auth" "this" {
   name = var.cluster_id
 }
 
-data "kubernetes_service" "ingress_nginx" {
+data "kubernetes_service" "nginx_ingress_service" {
   metadata {
     name      = "nginx-ingress-controller"
     namespace = helm_release.nginx-ingress-controller.namespace

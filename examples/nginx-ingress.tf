@@ -1,5 +1,6 @@
 resource "kubernetes_ingress_v1" "ingress" {
   wait_for_load_balancer = true
+  
   metadata {
     name = "ingress-resource"
   }
