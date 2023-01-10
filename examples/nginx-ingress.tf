@@ -1,8 +1,13 @@
 resource "kubernetes_ingress_v1" "ingress" {
   wait_for_load_balancer = true
-  
+
+  depends_on = [
+    kubernetes_namespace.my_namespace
+  ]
+
   metadata {
-    name = "ingress-resource"
+    name      = "fanout-ingress-resource"
+    namespace = var.namespace
   }
 
   spec {

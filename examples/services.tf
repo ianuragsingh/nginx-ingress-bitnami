@@ -1,6 +1,7 @@
 resource "kubernetes_service_v1" "app1_service" {
   metadata {
-    name = "app1-service"
+    name      = "app1-service"
+    namespace = var.namespace
   }
   spec {
     selector = {
@@ -10,11 +11,16 @@ resource "kubernetes_service_v1" "app1_service" {
       port = 5678
     }
   }
+
+  depends_on = [
+    kubernetes_namespace.my_namespace
+  ]
 }
 
 resource "kubernetes_service_v1" "app2_service" {
   metadata {
-    name = "app2-service"
+    name      = "app2-service"
+    namespace = var.namespace
   }
   spec {
     selector = {
@@ -24,4 +30,8 @@ resource "kubernetes_service_v1" "app2_service" {
       port = 5678
     }
   }
+
+  depends_on = [
+    kubernetes_namespace.my_namespace
+  ]
 }

@@ -1,6 +1,8 @@
 resource "kubernetes_pod_v1" "app1" {
   metadata {
-    name = "my-app1"
+    name      = "my-app1"
+    namespace = var.namespace
+    
     labels = {
       "app" = "app1"
     }
@@ -13,11 +15,17 @@ resource "kubernetes_pod_v1" "app1" {
       args  = ["-text=Hello from my app 1"]
     }
   }
+
+  depends_on = [
+    kubernetes_namespace.my_namespace
+  ]
 }
 
 resource "kubernetes_pod_v1" "app2" {
   metadata {
-    name = "my-app2"
+    name      = "my-app2"
+    namespace = var.namespace
+
     labels = {
       "app" = "app2"
     }
@@ -30,5 +38,9 @@ resource "kubernetes_pod_v1" "app2" {
       args  = ["-text=Hello from my app 2"]
     }
   }
+
+  depends_on = [
+    kubernetes_namespace.my_namespace
+  ]
 }
 
