@@ -14,13 +14,10 @@ module "eks_cluster" {
 module "nginx-ingress-controller" {
   source            = "git::https://github.com/ianuragsingh/nginx-ingress-controller.git?ref=v0.0.5"
   cluster_id        = module.eks_cluster.cluster_name
-
-  depends_on = [
-    module.eks_cluster
-  ]
 }
 
 output "eks_ingress_service_elb" {
   description = "External DNS name of ELB"
-  value       = data.kubernetes_service.eks_ingress_service_elb
+  value       = module.nginx-ingress-controller.eks_ingress_service_elb
 }
+
