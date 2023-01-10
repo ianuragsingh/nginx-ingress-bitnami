@@ -12,7 +12,7 @@ module "eks_cluster" {
   source = "git::https://github.com/ianuragsingh/simple-eks-cluster.git?ref=v0.0.9"
   
   cluster_name = "simple-eks-cluster"
-  subnet_ids   = ["subnet-0898b2ad84aa9814a", "subnet-0d892159af601e7b0"]  # Replace with your subnet ids or pass vpc name to create vpc
+  subnet_ids   = ["x", "y"]  # Replace with your subnet ids or pass vpc name to create vpc
   
   desired_size   = 1
   max_size       = 2
