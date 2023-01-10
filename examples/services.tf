@@ -7,7 +7,7 @@ resource "kubernetes_service_v1" "app1_service" {
       app = kubernetes_pod_v1.app1.metadata.0.labels.app
     }
     port {
-      port = 8888
+      port = 5678
     }
   }
 }
@@ -21,7 +21,7 @@ resource "kubernetes_service_v1" "app2_service" {
       app = kubernetes_pod_v1.app2.metadata.0.labels.app
     }
     port {
-      port = 8888
+      port = 5678
     }
   }
 }
