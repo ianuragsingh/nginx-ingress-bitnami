@@ -10,7 +10,7 @@ data "aws_eks_cluster_auth" "this" {
 #--------- Ingress Controller configurations --------
 
 module "nginx-ingress-controller" {
-  source     = "git::https://github.com/ianuragsingh/nginx-ingress-controller.git?ref=v0.0.6"
+  source     = "git::https://github.com/ianuragsingh/nginx-ingress-bitnami.git?ref=v0.0.6"
   cluster_id = module.eks_cluster.cluster_name
 }
 
